@@ -1,2 +1,4 @@
 # IDB_Grupo1_InfraestructuraUPM
-Desarrollo de una infraestructura para publicaciones científicas de la UPM
+
+
+En este repositorio se va a desarrollar una infraestructura para publicaciones científicas de la UPM.
