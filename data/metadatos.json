@@ -1,0 +1,149 @@
+{
+    "paperId": "00344e54337e5db155ad42b18191294e773cc01a",
+    "title": "Spanish Language Models",
+    "abstract": "This paper presents the Spanish RoBERTa-base and RoBERTa-large models, as well as the corresponding performance evaluations. Both models were pre-trained using the largest Spanish corpus known to date, with a total of 570GB of clean and deduplicated text processed for this work, compiled from the web crawlings performed by the National Library of Spain from 2009 to 2019. We extended the current evaluation datasets with an extractive Question Answering dataset and our models outperform the existing Spanish models across tasks and settings.",
+    "year": 2021,
+    "publicationDate": "2021-07-15",
+    "authors": [
+        {
+            "authorId": "2078772072",
+            "name": "Asier Guti\u00e9rrez-Fandi\u00f1o"
+        },
+        {
+            "authorId": "1405319696",
+            "name": "Jordi Armengol-Estap'e"
+        },
+        {
+            "authorId": "1850527789",
+            "name": "Marc P\u00e0mies"
+        },
+        {
+            "authorId": "2119550454",
+            "name": "Joan Llop-Palao"
+        },
+        {
+            "authorId": "2119543279",
+            "name": "Joaqu\u00edn Silveira-Ocampo"
+        },
+        {
+            "authorId": "1416319999",
+            "name": "C. Carrino"
+        },
+        {
+            "authorId": "1403836100",
+            "name": "A. Gonzalez-Agirre"
+        },
+        {
+            "authorId": "1405518065",
+            "name": "Carme Armentano-Oller"
+        },
+        {
+            "authorId": "1405597689",
+            "name": "Carlos Rodr\u00edguez-Penagos"
+        },
+        {
+            "authorId": "2066499928",
+            "name": "Marta Villegas"
+        }
+    ]
+}{
+    "paperId": "20f913b0e028c5d4aa52ed4f92155216f07de144",
+    "title": "Overview of QuALES at IberLEF 2022: Question Answering Learning from Examples in Spanish",
+    "abstract": "We present the results of the QuALES task, which addresses the problem of Extractive Question Answering from texts. For both training and evaluation we use the QuALES corpus, a corpus of Uruguayan media news about the Covid-19 pandemic and related topics. We describe the systems developed by seven participants, all of them based on different BERT-like language models. The best results were obtained using the multilingual RoBERTa model pre-trained with SQUAD-Es-V2, with a fine tuning on the QuALES corpus.",
+    "year": 2022,
+    "publicationDate": null,
+    "authors": [
+        {
+            "authorId": "2142413323",
+            "name": "Aiala Ros\u00e1"
+        },
+        {
+            "authorId": "2287191",
+            "name": "Luis Chiruzzo"
+        },
+        {
+            "authorId": "2184166244",
+            "name": "Luc\u00eda Bouza"
+        },
+        {
+            "authorId": "2187587093",
+            "name": "Alina Dragonetti"
+        },
+        {
+            "authorId": "145691225",
+            "name": "Santiago Castro"
+        },
+        {
+            "authorId": "5398429",
+            "name": "Math\u00edas Etcheverry"
+        },
+        {
+            "authorId": "2003583640",
+            "name": "Santiago G\u00f3ngora"
+        },
+        {
+            "authorId": "2187587819",
+            "name": "Santiago Goycoechea"
+        },
+        {
+            "authorId": "2187588379",
+            "name": "Juan Machado"
+        },
+        {
+            "authorId": "2171196",
+            "name": "Guillermo Moncecchi"
+        },
+        {
+            "authorId": "79885487",
+            "name": "J. J. Prada"
+        },
+        {
+            "authorId": "2004334",
+            "name": "Dina Wonsever"
+        }
+    ]
+}{
+    "paperId": "2038383fedccdf0b8c1efcb0832ecd18b481b3c1",
+    "title": "Overview of Big Data and Its Visualization",
+    "abstract": "Big Data is data sets that are so voluminous and complex that traditional data processing application software are inadequate to deal with them. This chapter discusses what Big Data is and its characteristics, and how this information revolution of Big Data is transforming our lives and the new technology and methodologies that have been developed to process data of these huge dimensionalities. This chapter discusses the components of the Big Data stack interface, categories of Big Data analytics software and platforms, descriptions of the top 20 Big Data analytics software. Big Data visualization techniques are discussed with real data from fatality analysis reporting system (FARS) managed by National Highway Traffic Safety Administration (NHTSA) of the United States Department of Transportation. Big Data web-based visualization software are discussed that are both JavaScript-based and user-interface-based. This chapter also discusses the challenges and opportunities of using Big Data and presents a flow diagram of the 30 chapters within this handbook.",
+    "year": 2022,
+    "publicationDate": null,
+    "authors": [
+        {
+            "authorId": "3128073",
+            "name": "R. Segall"
+        },
+        {
+            "authorId": "2052804160",
+            "name": "G. Niu"
+        }
+    ]
+}{
+    "paperId": "2ca14fe14f0bd2f1363f3b735e788d12c3f9f332",
+    "title": "Comparison between Expert Systems, Machine Learning, and Big Data: An Overview",
+    "abstract": "Today, the science of artificial intelligence has become one of the most important sciences in creating intelligent computer programs that simulate the human mind. The goal of artificial intelligence in the medical field is to assist doctors and health care workers in diagnosing diseases and clinical treatment, reducing the rate of medical error, and saving lives of citizens. The main and widely used technologies are expert systems, machine learning and big data. In the article, a brief overview of the three mentioned techniques will be provided to make it easier for readers to understand these techniques and their importance.",
+    "year": 2022,
+    "publicationDate": "2022-03-01",
+    "authors": [
+        {
+            "authorId": "1394846990",
+            "name": "Maad M. Mijwil"
+        },
+        {
+            "authorId": "2149322954",
+            "name": "Dhamyaa Salim Mutar"
+        },
+        {
+            "authorId": "21366673",
+            "name": "Y. Filali"
+        },
+        {
+            "authorId": "2061630849",
+            "name": "Karan Aggarwal"
+        },
+        {
+            "authorId": "2156915219",
+            "name": "Humam Al-Shahwani"
+        }
+    ]
+}
