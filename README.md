@@ -99,8 +99,13 @@ Por último, ejecutamos el fichero .ipynb donde se realizarán las consultas al 
 
 El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, similar a la generación del fichero Keywords.csv se empleará la infraestructura proporcionada por hadoop para realizar map-reduce. Para ello emplearemos el mismo contenedor que hemos usado anteriormente. Tendremos que copiar los archivos que sean necesarios a la carpeta jobs (asegurarnos de que existe metadatos.json en la carpeta jobs), dentro de yarn, y tras ello, repetir los pasos que hicimos en keywords. Ademas tendríamos que cambiar el mapper, el runner y el reducer y actualizar .jar.
 
+```cmd
+hadoop jar .jar org.bigdatainf.TMDB_Runner /prueba/metadatos.json /prueba/salidaText
+```
 
-
+```cmd
+hdfs dfs -get /prueba/salidaText/part-r-00000 /app/salidaText.txt
+```
 
 ## Soporte para consultas complejas
 
