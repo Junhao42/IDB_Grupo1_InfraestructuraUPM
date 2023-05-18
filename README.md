@@ -35,8 +35,7 @@ Antes de generar el fichero es necesario preparar la infraestructura de hadoop, 
   - namenode
   - nodemanager
   - resourcemanager
-
-Estos se encuentran en hadoop-deployment1
+Cada una de ellas se encuentra en su carpeta correspondiente dentro de la carpeta hadoop-deployment1. En cada una de ellas existe un archivo .bash que crea las imagenes.
 
 Para obtener el fichero es necesario emplear la imagen proporcionada en la carpeta yarn y ejecutar los siguientes comandos en la terminal:
 
