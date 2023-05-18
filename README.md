@@ -21,7 +21,7 @@ De este forma se ejecutará el fichero generarCsv.py y generarán los ficheros:
   - Documents.csv: contiene meta-información de las publicaciones
   - Authors.csv: contiene el número de publicaciones por autor
 
-Por otro lado, también se generarán los ficheros JSON necesarios para realizar los siguientes apartados
+Por otro lado, también se generarán los ficheros JSON, necesarios para realizar los siguientes apartados
 
 
 ## Generación de datos dinámicos
