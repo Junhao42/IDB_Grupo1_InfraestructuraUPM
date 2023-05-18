@@ -5,7 +5,7 @@ En este repositorio se va a desarrollar una infraestructura para publicaciones c
 
 ## Generación de datos estáticos 
 
-Para poner en marcha la aplicación primero será necesario guardar en la carpeta CrearCsvs un fichero .txt con los dois de las publicaciones de los artículos aceptados en  http://journal.sepln.org/sepln/ojs/ojs/index.php/pln/issue/view/286. Tras ello es necesario crear la imagen a partir del dockerfile ya existente usando el mandato:
+Para poner en marcha la aplicación primero será necesario guardar en la carpeta CrearCsvs un fichero .txt con los DOIs de las publicaciones de los artículos aceptados en  http://journal.sepln.org/sepln/ojs/ojs/index.php/pln/issue/view/286. Tras ello es necesario crear la imagen a partir del dockerfile ya existente usando el mandato:
 
 ```dockerfile
 docker build -t datosestaticos .
