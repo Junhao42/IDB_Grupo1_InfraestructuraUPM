@@ -117,6 +117,30 @@ LOAD CSV WITH HEADERS FROM 'file:///docs.csv' AS row
 
 ### Words
 
-Se emplearán 
+El objetivo es buscar el número de palabras en el corpus cuya longitud es de un tamaño específico. Para ello, se empleará el método `grep` que se encuentra disponible en los métodos predefinidos en hadoop. 
 
-a
+Para ello primero es necesario añadir el fichero abstracts.csv en la carpeta `/hadoop-deployment1/yarn/jobs` al igual que en apartados anteriores
+
+```cmd
+hdfs dfs -put abstract.csv /prueba
+```
+
+```cmd
+cd $HADOOP_HOME/share/hadoop/mapreduce/ 
+```
+
+En este ejemplo buscamos aquellas palabras que tienen una longitud de 4, en caso de querer hacer una consulta diferente, solo es necesario cambiar el número de dígitos a buscar en la expresión regular.
+
+```cmd
+yarn jar hadoop-mapreduce-examples-3.3.5.jar grep /practica2/abstracts.csv /prueba/words '\b\w{4}\b'
+```
+
+
+```cmd
+hdfs dfs -ls /prueba/words
+```
+
+
+```cmd
+hdfs dfs -get /prueba/words/part-r-00000 /app/words_conteo.txt
+```
