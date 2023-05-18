@@ -57,7 +57,7 @@ hdfs dfs -mkdir -p /practica2/
 hdfs dfs -put metadatos.json /practica2/
 ```
 
-4. Guardamos un snapshot desde IntellIJ al hacer un asembly y compile de los códigos java proporcionados en la carpeta, esto generará un fichero "elt-hadoop-1.0-SNAPSHOT-jar-with-dependencies.jar" que se tendrá que añadir a la carpeta ./hadoop-deployment/yarn/jobs. Por otro lado también será necesario modificar las palabras que se quieran filtrar:
+4. Guardamos un snapshot desde IntellIJ al hacer un asembly y compile de los códigos java proporcionados en la carpeta keywords, esto generará un fichero "elt-hadoop-1.0-SNAPSHOT-jar-with-dependencies.jar" que se tendrá que añadir a la carpeta ./hadoop-deployment/yarn/jobs. Por otro lado también será necesario modificar las palabras que se quieran filtrar:
 
 ```py
     private String[] targetWords = {"paper", "Question", "of"};
@@ -97,7 +97,7 @@ Por último, ejecutamos el fichero .ipynb donde se realizarán las consultas al 
 
 ### Texts
 
-El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, similar a la generación del fichero Keywords.csv se empleará la infraestructura proporcionada por hadoop para realizar map-reduce. Para ello emplearemos el mismo contenedor que hemos usado anteriormente. Tendremos que copiar los archivos que sean necesarios a la carpeta jobs (asegurarnos de que existe metadatos.json en la carpeta jobs), dentro de yarn, y tras ello, repetir los pasos que hicimos en keywords. Ademas tendríamos que cambiar el mapper, el runner y el reducer y actualizar .jar.
+El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, similar a la generación del fichero Keywords.csv se empleará la infraestructura proporcionada por hadoop para realizar map-reduce. Para ello emplearemos el mismo contenedor que hemos usado anteriormente. Tendremos que copiar los archivos que sean necesarios a la carpeta jobs (asegurarnos de que existe metadatos.json en la carpeta jobs), dentro de yarn, y tras ello, repetir los pasos que hicimos en keywords. Ademas tendríamos que cambiar el mapper, el runner y el reducer y actualizar .jar, sus nuevos codigos se encuentran dentro de la carpeta texts.
 
 ```cmd
 hadoop jar .jar org.bigdatainf.TMDB_Runner /prueba/metadatos.json /prueba/salidaText
