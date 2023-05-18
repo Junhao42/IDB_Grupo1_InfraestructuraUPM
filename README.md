@@ -79,12 +79,27 @@ hdfs dfs -get /practica2/keywords_output/part-r-00000 /app/keywords_output
 
 ### Articles
 
-Se emplea ElasticSearch mapReduce para generar un listado ordenado de artículos en los que un autor específico ha participado.
+Se emplea ElasticSearch para generar un listado ordenado de artículos en los que un autor específico ha participado. Nos apoyaremos de un fichero python para realizar las peticiones web y realizaar algunas operaciones simples si son necesarias.
 
+Para desarrollar este punto, tan solo es necesario moverse hasta la carpeta elasticSearch y construir la imagen.
+
+```cmd
+docker build -t mi-elasticsearch .
+```
+
+Tras ello creamos un contenedor docker montando un volumen en la carpeta data, donde se encuentran los archivos con los datos que usaremos:
+
+```cmd
+"docker run -p 9200:9200 -v "ruta\elasticSearch\data":/usr/share/elasticsearch/data mi-elasticsearch
+```
+
+Por último, ejecutamos el fichero .ipynb donde se realizarán las consultas al contenedor docker de elasticSeach mediante el modulo requests de python y se ordenarán los resultados.
 
 ### Texts
 
-El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, similar a la generación del fichero Keywords.csv se empleará la infraestructura proporcionada por hadoop para realizar map-reduce 
+El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, similar a la generación del fichero Keywords.csv se empleará la infraestructura proporcionada por hadoop para realizar map-reduce y crear una imagen a partir de ese dockerfile:
+
+
 
 
 ## Soporte para consultas complejas
