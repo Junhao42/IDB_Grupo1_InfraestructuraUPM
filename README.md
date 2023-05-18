@@ -35,6 +35,7 @@ Antes de generar el fichero es necesario preparar la infraestructura de hadoop, 
   - namenode
   - nodemanager
   - resourcemanager
+
 Cada una de ellas se encuentra en su carpeta correspondiente dentro de la carpeta hadoop-deployment1. En cada una de ellas existe un archivo .bash que crea las imagenes.
 
 Para obtener el fichero es necesario emplear la imagen proporcionada en la carpeta yarn y ejecutar los siguientes comandos en la terminal:
@@ -44,7 +45,7 @@ Para obtener el fichero es necesario emplear la imagen proporcionada en la carpe
 docker exec -it namenode /bin/bash
 ```
 
-2. Es recomendable crear una carpeta (por ejemplo, "practica2" donde guardaremos los ficheros:
+2. Es recomendable crear una carpeta (por ejemplo, "practica2") donde guardaremos los ficheros:
 
 ```cmd
 hdfs dfs -mkdir -p /practica2/
