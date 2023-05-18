@@ -36,7 +36,7 @@ Antes de generar el fichero es necesario preparar la infraestructura de hadoop, 
   - nodemanager
   - resourcemanager
 
-Cada una de ellas se encuentra en su carpeta correspondiente dentro de la carpeta hadoop-deployment1. En cada una de ellas existe un archivo .bash que crea las imagenes.
+Cada una de ellas se encuentra en su carpeta correspondiente dentro de la carpeta hadoop-deployment1. En cada una de ellas existe un archivo .bash que crea las imágenes.
 Por otro lado, será necesario copiar el fichero metadatos.json del directorio CrearCsvs, en la carpeta /yarn/jobs. Este fichero contiene los datos sobre los que realizaremos el map-reduce
 Para obtener el fichero es necesario emplear la imagen proporcionada en la carpeta yarn y ejecutar los siguientes comandos en la terminal:
 
@@ -79,7 +79,7 @@ hdfs dfs -get /prueba/keywords_output/part-r-00000 /app/keywords_output
 
 ### Articles
 
-Se emplea ElasticSearch para generar un listado ordenado de artículos en los que un autor específico ha participado. Nos apoyaremos de un fichero python para realizar las peticiones web y realizaar algunas operaciones simples si son necesarias.
+Se emplea ElasticSearch para generar un listado ordenado de artículos en los que un autor específico ha participado. Nos apoyaremos de un fichero python para realizar las peticiones web y realizar algunas operaciones simples si son necesarias.
 
 Para desarrollar este punto, tan solo es necesario moverse hasta la carpeta elasticSearch y construir la imagen.
 
@@ -97,7 +97,7 @@ Por último, ejecutamos el fichero .ipynb donde se realizarán las consultas al 
 
 ### Texts
 
-El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, similar a la generación del fichero Keywords.csv se empleará la infraestructura proporcionada por hadoop para realizar map-reduce. Para ello emplearemos el mismo contenedor que hemos usado anteriormente. Tendremos que copiar los archivos que sean necesarios a la carpeta jobs (asegurarnos de que existe metadatos.json en la carpeta jobs), dentro de yarn, y tras ello, repetir los pasos que hicimos en keywords. Ademas tendríamos que cambiar el mapper, el runner y el reducer y actualizar .jar, sus nuevos codigos se encuentran dentro de la carpeta texts.
+El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, de forma similar a la generación del fichero Keywords.csv, se empleará la infraestructura proporcionada por hadoop para realizar map-reduce. Para ello, emplearemos el mismo contenedor que hemos usado anteriormente. Tendremos que copiar los archivos que sean necesarios a la carpeta jobs (asegurarnos de que existe metadatos.json en dicha carpeta), dentro de yarn, y tras ello, repetir los pasos que hicimos en keywords. Además tendríamos que cambiar el mapper, el runner y el reducer y actualizar .jar, sus nuevos códigos se encuentran dentro de la carpeta texts.
 
 ```cmd
 hadoop jar .jar org.bigdatainf.TMDB_Runner /prueba/metadatos.json /prueba/salidaText
