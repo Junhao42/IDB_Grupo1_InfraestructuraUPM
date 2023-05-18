@@ -10,13 +10,13 @@ Para poner en marcha la aplicación primero será necesario guardar en la carpet
 ```dockerfile
 docker build -t datosestaticos .
 ```
-Despues, podemos levantar el contenedor que creará los archivos que necesitemos:
+Después, podemos levantar el contenedor que creará los archivos que necesitemos:
 
 ```dockerfile
 docker compose up
 ```
 
-De este forma se ejecutará el fichero generarCsv.py y generará los ficheros:
+De este forma se ejecutará el fichero generarCsv.py y generarán los ficheros:
 
   - Documents.csv: contiene meta-información de las publicaciones
   - Authors.csv: contiene el número de publicaciones por autor
