@@ -31,8 +31,8 @@ Se emplea la infraestructura de hadoop para la generación del fichero Keywords.
 Antes de generar el fichero es necesario preparar la infraestructura de hadoop, para ello se deben crear las imágenes pertinentes en las carpetas:
   - base
   - datanode
-  - historyserver
   - namenode
+  - historyserver
   - nodemanager
   - resourcemanager
 
