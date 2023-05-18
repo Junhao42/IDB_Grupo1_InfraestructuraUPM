@@ -137,7 +137,7 @@ cd $HADOOP_HOME/share/hadoop/mapreduce/
 En este ejemplo buscamos aquellas palabras que tienen una longitud de 4, en caso de querer hacer una consulta diferente, solo es necesario cambiar el número de dígitos a buscar en la expresión regular.
 
 ```cmd
-yarn jar hadoop-mapreduce-examples-3.3.5.jar grep /practica2/abstracts.csv /prueba/words '\b\w{4}\b'
+yarn jar hadoop-mapreduce-examples-3.3.5.jar grep /prueba/abstracts.csv /prueba/words '\b\w{4}\b'
 ```
 
 
