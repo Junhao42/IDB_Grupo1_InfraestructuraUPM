@@ -111,7 +111,7 @@ Se realizará un listado ordenado de autores relacionados con un autor específi
 Para ello, levantaremos un contenedor que tendrá un cluster de nodos de neo4j con varios cores. El proceso es sencillo, primero copiamos el fichero docs.csv, que hemos generado en la carpeta CrearCsvs dentro de la carpeta neo4j/data/core1/backups, teniendo que hacerlo para cada core. Tras ello, accedemos a la interfaz web de uno de los cores (pueden verse dentro del archivo docker-compose.yml) y ya podriamos cargar datos y hacer consultas. Un ejemplo de como cargar los datos sería:
 
 ```sql
-"LOAD CSV WITH HEADERS FROM 'file:///docs.csv' AS row
+LOAD CSV WITH HEADERS FROM 'file:///docs.csv' AS row
 ```
 
 
