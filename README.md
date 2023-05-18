@@ -23,7 +23,17 @@ Por otro lado también se generarán los ficheros .json necesarios para realizar
 
 Se emplea la infraestructura de hadoop para la generación del fichero Keywords.csv, que contiene el número de apariciones de un término concreto o cualquiera de sus sinónimos. Se puede encontrar dicha infraestructura en  https://github.com/bigdatainf/hadoop-deployment.git, que está basada en el repositorio big-data-europe/docker-hadoop.
 
-Para ejecutar el el fichero es necesario emplear la imagen proporcionada en la carpeta yarn y ejecutar los siguientes comandos en la terminal:
+Antes de generar el fichero es necesario preparar la infraestructura de hadoop, para ello se deben crear las imágenes pertinentes en las carpetas:
+  - base
+  - datanode
+  - historyserver
+  - namenode
+  - nodemanager
+  - resourcemanager
+
+Estos se encuentran en hadoop-deployment1
+
+Para obtener el fichero es necesario emplear la imagen proporcionada en la carpeta yarn y ejecutar los siguientes comandos en la terminal:
 
 1. Entrar en la consola hdfs
 ```cmd
@@ -60,7 +70,6 @@ hadoop jar elt-hadoop-1.0-SNAPSHOT-jar-with-dependencies.jar org.bigdatainf.TMDB
 hdfs dfs -get /practica2/keywords_output/part-r-00000 /app/keywords_output
 ```
 
-
 ## Soporte para consultas simples
 
 ### Articles
@@ -71,3 +80,16 @@ Se emplea ElasticSearch mapReduce para generar un listado ordenado de artículos
 ### Texts
 
 El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, similar a la generación del fichero Keywords.csv se empleará la infraestructura proporcionada por hadoop para realizar map-reduce 
+
+
+## Soporte para consultas complejas
+
+### Collaborators
+
+Se realizará un listado ordenado de autores relacionados con un autor específico utilizando neo4j, una base de datos centrada en grafos, dado el hecho que estamos tratando con datos con gran interconectividad, donde priman las relaciones entre nodos.
+
+Se empleará la imagen de neo4j en local para realizar la prueba
+
+### Words
+
+Se emplearán 
