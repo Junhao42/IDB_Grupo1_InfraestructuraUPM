@@ -118,7 +118,7 @@ Para ello, levantaremos un contenedor que tendrá un cluster de nodos de neo4j c
 ```sql
 LOAD CSV WITH HEADERS FROM 'file:///docs.csv' AS row
 ```
-
+Tanto la forma en la que hemos creado los nodos y las relaciones como la consulta que proponemos, se encuentran en el fichero de texto consulta.txt.
 
 ### Words
 
