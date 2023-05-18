@@ -97,7 +97,7 @@ Por último, ejecutamos el fichero .ipynb donde se realizarán las consultas al 
 
 ### Texts
 
-El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, similar a la generación del fichero Keywords.csv se empleará la infraestructura proporcionada por hadoop para realizar map-reduce y crear una imagen a partir de ese dockerfile:
+El objetivo de este apartado es obtener un listado ordenado de párrafos, junto con el título del artículo al que pertenecen, que contienen un término específico. Para ello, similar a la generación del fichero Keywords.csv se empleará la infraestructura proporcionada por hadoop para realizar map-reduce. Para ello emplearemos el mismo contenedor que hemos usado anteriormente. Tendremos que copiar los archivos que sean necesarios a la carpeta jobs, dentro de yarn, y tras ello, repetir los pasos que hicimos en keywords. Ademas tendríamos que cambiar el mapper, el runner y el reducer y actualizar .jar
 
 
 
