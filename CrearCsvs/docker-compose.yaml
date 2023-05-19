@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  prueba:
+    image: datosestaticos
+    volumes_from:
+      - data:rw
+  data:
+    image: busybox
+    volumes:
+      - .:/mnt/shared-data/
