@@ -1,0 +1,1 @@
+docker build -t bigdatainf/hadoop-historyserver:3.3.5 .

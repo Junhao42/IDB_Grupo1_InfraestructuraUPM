@@ -1,0 +1,1 @@
+docker build -t bigdatainf/hadoop-nodemanager:3.3.5 .
