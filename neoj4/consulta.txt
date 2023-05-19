@@ -1,0 +1,25 @@
+Para ello, hay que modificar en el docker compose el volumen de cada core, de la siguiente manera:
+
+-> "./data/core1/backups:/var/lib/neo4j/import"
+
+
+CREAR LOS NODOS Y RELACIONES:
+
+
+LOAD CSV WITH HEADERS FROM 'file:///docs.csv' AS row
+MERGE (:Paper {Id:row.paperId, title:row.paper})
+MERGE (:Author {Id:row.Id, name:row.author});
+
+LOAD CSV WITH HEADERS FROM 'file:///docs.csv' AS row WITH row
+MATCH (pa:Paper {title:row.paper}) WITH row, pa
+MATCH (au:Author {name:row.author}) WITH row, pa, au
+CREATE (au)-[:write]->(pa)
+
+
+QUERY
+
+
+MATCH (a:Author {name:'G. Niu'})-[:write]-(p:Paper) WITH a, p
+MATCH (b:Author)-[:write]-(p:Paper) WHERE not(a=b) WITH a, b, p
+MATCH (b:Author)-[:write]-(p1:Paper) WITH a, b, p, p1
+MATCH (c:Author)-[:write]-(p1:Paper) WHERE not(a=c) RETURN b, c

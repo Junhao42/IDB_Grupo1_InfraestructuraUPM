@@ -1,0 +1,106 @@
+Mapper:
+
+
+package org.bigdatainf;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+import java.io.IOException;
+import org.json.JSONObject;
+
+
+public class TMDB_Mapper extends Mapper<Object, Text, Text, IntWritable> {
+
+    private final static IntWritable one = new IntWritable(1);
+    private Text word = new Text();
+    private String searchTerm = "of"; // Reemplaza "término" con tu término específico
+
+    public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+        String jsonString = value.toString();
+        JSONObject jsonObject = new JSONObject(jsonString);
+
+        if (jsonObject.has("title") && jsonObject.has("abstract")) {
+            String title = jsonObject.getString("title");
+            String abstractText = jsonObject.getString("abstract");
+
+            // Busca la aparición del término específico en el abstract
+            if (abstractText.toLowerCase().contains(searchTerm.toLowerCase())) {
+                word.set(title);
+                context.write(word, one);
+            }
+        }
+    }
+}
+
+
+
+Reducer:
+
+
+package org.bigdatainf;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+import java.io.IOException;
+import org.apache.hadoop.mapreduce.Reducer;
+
+import java.io.IOException;
+
+public class TMDB_Reducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+
+    private IntWritable result = new IntWritable();
+
+    public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+        int sum = 0;
+
+        // Suma las frecuencias de aparición del término para un título dado
+        for (IntWritable value : values) {
+            sum += value.get();
+        }
+
+        result.set(sum);
+        context.write(key, result);
+    }
+}
+
+
+
+Runner:
+
+
+
+package org.bigdatainf;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+
+public class TMDB_Runner {
+
+    public static void main(String[] args) throws Exception {
+        Configuration conf = new Configuration();
+        Job job = Job.getInstance(conf, "word count");
+        job.setJarByClass(TMDB_Runner.class);
+
+        job.setInputFormatClass(TextInputFormat.class);
+        TextInputFormat.addInputPath(job, new Path(args[0]));
+
+        job.setMapperClass(TMDB_Mapper.class);
+        job.setCombinerClass(TMDB_Reducer.class);
+        job.setReducerClass(TMDB_Reducer.class);
+
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(IntWritable.class);
+        job.setOutputFormatClass(TextOutputFormat.class);
+        TextOutputFormat.setOutputPath(job, new Path(args[1]));
+
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
+    }
+}
